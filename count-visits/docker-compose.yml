@@ -1,0 +1,11 @@
+# specify the version of docker-compose that we are trying to use with this file
+version: '3' 
+
+#every time you listen service in Docker, it's referring to a type of docker container
+services: 
+  redis-server:
+    image: redis
+  node-app: 
+    build: . # look in the current directory for a dockerfile and use it to build image that will be used for this container
+    ports: 
+      - "8081:8081" # <port on your local machine : port inside contianer>
